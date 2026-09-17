@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Музыка и Песни — Николай Цветков</title>
+  <meta name="description" content="Музыкальный сайт Николая Цветкова">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Николай Цветков</a>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#tracks">Треки</a>
+      <a href="#releases">Релизы</a>
+      <a href="#about">Обо мне</a>
+    </nav>
+    <button class="theme" id="themeBtn" aria-label="Переключить тему">☾</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">МУЗЫКА, КОТОРАЯ ОСТАЁТСЯ</p>
+        <h1>Николай Цветков</h1>
+        <p class="tagline">Эмоция. Звук. Ты.</p>
+        <div class="hero-actions">
+          <button class="primary" id="playAll">▶ Слушать всё</button>
+          <a class="secondary" href="#tracks">Мои треки</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="releases">
+      <div class="section-head">
+        <h2>Новые релизы</h2>
+      </div>
+      <div class="release-grid" id="releaseGrid"></div>
+    </section>
+
+    <section class="section tracks-section" id="tracks">
+      <div class="section-head">
+        <h2>Треки</h2>
+        <label class="upload-demo">
+          <input type="file" id="localMusic" accept="audio/*" multiple hidden>
+          <span>＋ Добавить для прослушивания</span>
+        </label>
+      </div>
+
+      <div class="track-layout">
+        <div class="track-list" id="trackList"></div>
+        <aside class="now-playing">
+          <img id="nowCover" src="covers/default.svg" alt="Обложка">
+          <div class="small-label">СЕЙЧАС ИГРАЕТ</div>
+          <h3 id="nowTitle">Выберите трек</h3>
+          <p id="nowArtist">KAIROS</p>
+          <div class="progress-wrap">
+            <input id="progress" type="range" min="0" max="100" value="0">
+            <div class="time"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+          </div>
+          <div class="controls">
+            <button id="prev">↶</button>
+            <button class="big-play" id="playPause">▶</button>
+            <button id="next">↷</button>
+          </div>
+          <div class="volume">
+            <span>🔊</span>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
+          </div>
+          <audio id="audio" preload="metadata"></audio>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <p class="eyebrow">ОБО МНЕ</p>
+      <h2>Музыка без лишнего.</h2>
+      <p>Здесь можно разместить описание артиста, ссылки на соцсети, концерты и любую другую информацию.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Николай Цветков</span>
+    <span>Слушай. Чувствуй. Живи.</span>
+  </footer>
+
+  <script src="tracks.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
